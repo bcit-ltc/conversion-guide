@@ -1,0 +1,98 @@
+.ug-splash {
+	width: 100%;
+	height: auto;
+	background-color: $splash-background-color;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	padding: 10vw;
+	p {
+		font-size: 2em;
+		font-weight: 300;
+	}
+	a.btn {
+		color: white;
+		display: inline-block;
+	}
+}
+
+.ug-content {
+	padding: 1em 1em 4em 1em;
+	border-bottom: 1px dotted #bababa;
+	color: #515151;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	>* {
+		position: relative;
+		max-width: 720px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	>h1 {
+		color: $page-heading-color;
+		border: none;
+		text-align: center;
+		font-size: 2.5em;
+	}
+	>h2 {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	p {
+		margin: 1.5em auto;
+	}
+}
+
+//the code below define the examples on the home page
+.grid {
+	display: grid;
+	grid-template-columns: 45% 10% 45%;
+	grid-template-rows: 1fr 1fr;
+}
+
+.arrow {
+	max-width: 100px;
+	margin: 0 auto;
+
+	-webkit-transform: translateY(30%) translateX(0%);
+	-moz-transform: translateY(30%) translateX(0%);
+	transform: translateY(30%) translateX(0%);
+}
+
+.example-links {
+	margin: 0 auto;
+	width: 250px;
+	figure {
+		float: left;
+		clear: none;
+		a {
+			height: 0;
+			padding-top: 100%;
+			display: block;
+			position: relative;
+			border: none;
+			&:hover,
+			&:focus {
+				box-shadow: 2px 2px 5px gray;
+			}
+			img {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 550px) {
+
+	.example-links {
+		width: 150px;
+	}
+
+	.arrow {
+		width: 0px;
+	}
+}

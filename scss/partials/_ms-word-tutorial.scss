@@ -1,0 +1,43 @@
+.word-tool-display {
+	position: relative;
+	display: block;
+	border: 2px solid white;
+	margin-bottom: 5px;
+	img {
+		height: auto;
+		width: 100%;
+		display: relative;
+		z-index: 1;
+	}
+}
+
+.word-tools,
+.word-legend {
+	.status-yes {
+		background: green;
+	}
+	.status-no {
+		background: red;
+	}
+	.status-depends {
+		background: orange;
+	}
+	[class^='status-'] {
+		opacity: .1;
+		transition: opacity .5s ease;
+		cursor: pointer;
+	}
+	[class^='status-']:hover {
+		opacity: .5;
+	}
+}
+
+.word-tools .tool-info {
+	background: #e0e0e0;
+	margin: 10px 30px 0px;
+	padding: 0 10px;
+}
+
+.word-legend {
+	list-style-type: none;
+}

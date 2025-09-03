@@ -1,0 +1,61 @@
+<heading>Size and Position</heading>
+<blurb>You can control the size and position of any figure using simple html classes.</blurb>
+<preview>
+	<figure class="img smaller right">
+		<img src="../assets/mining-pit-operations.jpeg" alt="a photograph of a mining operation" />
+		<figcaption>Mining pit operations</figcaption>
+	</figure>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, aliquam, cupiditate blanditiis quam aliquid itaque eligendi nisi assumenda, distinctio sint minima repudiandae! Ab necessitatibus mollitia, voluptate ut quaerat nulla suscipit?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, aliquam, cupiditate blanditiis quam aliquid itaque eligendi nisi assumenda, distinctio sint minima repudiandae! Ab necessitatibus mollitia, voluptate ut quaerat nulla suscipit?</p>
+</preview>
+<word>
+	<p>#image</p>
+	<img src="../assets/mining-pit-operations.jpeg" alt="a photograph of a mining operation" />
+	<p>Alt: a photograph of a mining operation</p>
+	<p>Mining pit operations</p>
+	<p>/image</p>
+</word>
+<notes>
+	<p>To request a specific size or position, leave instructions in a Word comment. See the <a href="/home#essential-tips">essential tips</a> section about leaving instructions for more help.</p>
+	<div class="warning">
+		<h3>Image Position</h3>
+		<p>Describing the size and position of content online is more of a suggestion than decree. For this reason, it is highly recommended to <strong>avoid describing figures based on their location</strong>. Statements such as <em>"the image on the right"</em> will sound silly if read on smaller devices.</p>
+	</div>
+	<div class="accordion">
+		<h3>Developer Notes</h3>
+		<p>One feature built into this framework is to maintain a minimum text column width. If push comes to shove, the framework will move the figure rather than compromising on readability. Similarly, as large as you may like a figure to be, it is necessarily confined by the widths of the viewport.</p>
+		<h4>Position</h4>
+		<p>There are only two options for position:</p>
+		<ul>
+			<li>left</li>
+			<li>right</li>
+		</ul>
+		<p>Otherwise, figures are centered by default.</p>
+		<div class="warning">
+			<p>Never specify a position by itself. Always use the position in combination with size, otherwise we cannot maintain the minimum text column width...</p>
+		</div>
+		<h4>Sizing</h4>
+		<p>The following sizes are available:</p>
+		<ul>
+			<li>full-width</li>
+			<li>largest</li>
+			<li>larger</li>
+			<li>large</li>
+			<li>[none specified]</li>
+			<li>small</li>
+			<li>smaller</li>
+			<li>smallest</li>
+		</ul>
+		<p>These widths are relative to the maximum text column width (eg the widest the text can stretch on a large screen). Naturally, smaller sizes are smaller and larger sizes are larger than this size. "None specified" is a little more complicated as it varies depending on the type of figure. Most will be the default width, but images will take on their natural width.</p>
+		<div class="warning">
+			<p>"None specified" is not an option if you are positioning a figure. Select on of the others.</p>
+		</div>
+		<h4>Expert level sizes</h4>
+		<p>You can't use these in combination with positioning, but they may come in handy for certain edge cases. They are: </p>
+		<ul>
+			<li>width[%]</li>
+			<li>height[px]</li>
+		</ul>
+		<p>For example, width33 will be 33% of it's parent container. Alternatively, height17 would be... 25px high (it's always rounded up to the nearest 25).</p>
+	</div>
+</notes>

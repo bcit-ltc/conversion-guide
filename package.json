@@ -1,0 +1,26 @@
+{
+  "name": "conversion-guide",
+  "version": "1.0.0",
+  "author": "BCIT LTC, Course Production Team",
+  "license": "MIT",
+  "description": "guide for conversion",
+  "main": "gulpfile.mjs",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm prune && npm install && gulp watch",
+    "quickly": "gulp watch",
+    "build": "npm prune && npm install && gulp build"
+  },
+  "dependencies": {
+    "browser-sync": "^3.0.2",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.77.8"
+  }
+}

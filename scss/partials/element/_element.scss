@@ -1,0 +1,40 @@
+// This partial mostly relates to the general layout of the element class and it's contents.
+.element {
+	background: white;
+	>* {
+		//color: gray;
+	}
+	margin: 15px;
+	margin-bottom: 30px;
+	padding: 2em 20px;
+	border-radius: 2px;
+	padding-bottom: 100px;
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+	&:hover {
+		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	}
+}
+
+.element> {
+	.blurb,
+	header {
+		max-width: 800px;
+		margin: 0 auto;
+		display: block;
+	}
+	.blurb {
+		margin-bottom: 50px;
+	}
+	header {
+		color: $element-heading-color;
+		h2 {
+			font-size: 1.5em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+}
+
+@import "./panels";
+@import "./preview";
+@import "./word";

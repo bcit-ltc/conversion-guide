@@ -1,0 +1,39 @@
+<heading>Hyperlinks</heading>
+<blurb>HTML links - or <em>hyperlinks</em> - allow you to click to other pages or documents.</blurb>
+<preview>
+	<p>Use the <a href="http://www.bcit.ca/health/hcm/courseschedule.shtml">course schedule</a> to keep yourself organized.</p>
+</preview>
+<word>
+	<p>Use the <a href="http://www.bcit.ca/health/hcm/courseschedule.shtml">course schedule</a> to keep yourself organized.</p>
+	<img src="../assets/hyperlink.png">
+</word>
+<notes>
+	<p>The text in the link is intended to describe the purpose of the link, and it's best to keep long URL's concealed from the reader.</p>
+	<div class="note">
+		<p>Avoid embedding long links that start with <em>http://some.link.com</em> without accompanying text</p>
+	</div>
+	<h3>Creating a Hyperlink in Word</h3>
+	<p>For hyperlinks to web sites or resources, <a href="https://artbiz.ca/how-to-copy-and-paste-a-link/">go to the site and copy the address first</a>. Then, in Word:</p>
+	<ol>
+		<li>highlight the text you want to use as a link</li>
+		<li>right-click and choose <strong>Hyperlink</strong></li>
+		<li>paste the website into the <strong>Address</strong> field and click <strong>OK</strong></li>
+	</ol>
+	<p>For hyperlinks to files, it's best if everything is in the same folder as your Word document. Organize your files into a single folder. Then, in Word:</p>
+	<ol>
+		<li>highlight the text you want to use as a link</li>
+		<li>right-click and choose <strong>Hyperlink</strong></li>
+		<li>paste the website into the <strong>Address</strong> field and click <strong>OK</strong></li>
+	</ol>
+	<div class="accordion">
+		<h3>Developer Notes</h3>
+		<p>Links should always specify a target:</p>
+		<dl>
+			<dt>Learning Hub internal links:</dt>
+			<dd><code>target=“_self”</code></dd>
+			<dt>External links:</dt>
+			<dd><code>target=“_blank” class=”external-link”</code></dd>
+		</dl>
+		<p>The link title attribute can be used to provide additional details for mouse users, but should not be relied on as the main source of information scent. See <a href="https://www.nngroup.com/articles/title-attribute/">Using the Title Attribute to Help Users Predict Where They Are Going</a>.</p>
+	</div>
+</notes>

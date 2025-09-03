@@ -1,0 +1,15 @@
+services:
+  app:
+    image: conversion-guide
+    build:
+      context: .
+      target: cleaner
+    # command: npm run watch
+    environment:
+      - DEBUG=True
+    working_dir: /app
+    volumes:
+      - .:/app
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+    ports:
+      - "8080:8080"

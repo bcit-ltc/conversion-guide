@@ -1,0 +1,34 @@
+<div class="feedback-form">
+    <div class="feedback-header">Feedback</div>
+    <div class="close-form">&#10006;</div>
+    <form action="https://ltc.bcit.ca/feedback/message" method="POST" role="form">
+        <div>
+            <label for="type">Type:</label>
+            <input type="radio" name="type" id="type-enhancement" value="enhancement" checked><label for="type-enhancement">Suggestion</label><br/>
+            <input type="radio" name="type" id="type-bug" value="bug"><label for="type-bug">Report a Problem</label><br/>
+            <input type="radio" name="type" id="type-question" value="question"><label for="type-question">Question</label><br/>
+            <input type="radio" name="type" id="type-other" value="other"><label for="type-other">Other</label><br/>
+        </div>
+        <div>
+            <label for="feedback-comment">Comment:</label>
+            <div class="textarea-container"><textarea name="comment" id="feedback-comment" required placeholder="Write your feedback here."></textarea></div>
+        </div>
+        <div>
+            <input id="follow-up" type="checkbox" name="provide-email" value="provide-email"><label for="follow-up">Need a response/follow up?</label><br/> 
+            <div class="optional-email">
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="your_email@bcit.ca">
+            </div>
+        </div>
+        
+        <input type="hidden" name="location" class="input-location">
+        <div class="feedback-submit-btn">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<div class="feedback-modal">
+    <span class="feedback-close-modal">&#10006;</span>
+    <p>Thank you for your feedback!</p>
+</div>

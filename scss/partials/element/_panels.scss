@@ -1,0 +1,97 @@
+.element>button {
+	position: relative;
+	color: $element-heading-color;
+	font-weight: bold;
+	background: transparent;
+	border: none;
+	border-top: 1px solid #dedede;
+	text-align: left;
+	padding: 20px 10px;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	display: block;
+	outline: none;
+	transition: all 0.5s ease;
+	cursor: pointer;
+	text-transform: uppercase;
+	&:hover {
+		color: $sky;
+	}
+	&:after {
+		position: absolute;
+		display: block;
+		right: 20px;
+		top: 21px;
+		font-family: FontAwesome;
+		content: "\f055"; //fa-plus-circle
+	}
+	&.open:after {
+		font-family: FontAwesome;
+		content: "\f056";
+	}
+}
+
+.border-bottom {
+	border-bottom: 1px solid #dedede;
+	max-width: 800px;
+	display: block;
+	margin: 0 auto;
+}
+
+.word,
+.html,
+.notes {
+	max-width: 720px;
+	margin-top: 50px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.notes {
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+		color: $element-heading-color;
+		text-transform: uppercase;
+	}
+}
+
+.preview-button,
+.word-button,
+.html-button,
+.notes-button {
+	&:before {
+		font-family: FontAwesome;
+		margin-right: 8px;
+	}
+}
+
+.preview-button:before {
+	content: "\f06e";
+}
+
+.word-button:before {
+	content: "\f1c2";
+}
+
+.html-button:before {
+	content: "\f121";
+}
+
+.notes-button:before {
+	content: "\f24a";
+}
+
+.preview-button {
+	cursor: default !important;
+	&:after {
+		content: "" !important;
+	}
+	&:hover {
+		color: $element-heading-color !important;
+	}
+}

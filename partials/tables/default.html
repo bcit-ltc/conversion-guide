@@ -1,0 +1,114 @@
+<heading>Default Tables</heading>
+<blurb>Tables organize information into a visually structured format.</blurb>
+<preview>
+	<figure class="table">
+		<table>
+			<caption>Table 1: Table title text...</caption>
+			<thead>
+				<tr>
+					<th>Heading 1</th>
+					<th>Heading 2</th>
+					<th>Heading 3</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Cell 1</td>
+					<td>...</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>Cell A</td>
+					<td>...</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>Cell X</td>
+					<td>...</td>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<figcaption>
+			<p>Table caption text...</p>
+			<footer><small class="license">BCIT &copy; 2020</small></footer>
+		</figcaption>
+	</figure>
+</preview>
+<word>
+	<p>#table</p>
+	<h2>Table 1: Table heading...</h2>
+	<table class="unstyled">
+		<caption>Table 1: Table title text...</caption>
+		<thead>
+			<tr>
+				<th>Heading 1</th>
+				<th>Heading 2</th>
+				<th>Heading 3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Cell 1</td>
+				<td>...</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>Cell A</td>
+				<td>...</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>Cell X</td>
+				<td>...</td>
+				<td>&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Table caption text...</p>
+	<p>License: &copy; 2018</p>
+	<p>/table</p>
+</word>
+<notes>
+	<p>Use Word to create tables. Bolded text in the first row or column will be considered a row or column heading.</p>
+	<p>Any text below the table, between <strong>#table</strong> and <strong>/table</strong>, is considered caption text.</p>
+	<div class="note">Try to ensure your table content has no formatting other than bold text to indicate a column or row heading.</div>
+	<div class="accordion">
+		<h3>Developer notes</h3>
+		<h4>Styles</h4>
+		<p>You can modify the appearance of tables by adding the following HTML classes to the table tag:</p>
+		<ul>
+			<li><strong>compact:</strong> for text-heavy tables, add this to reduce the font-size and cell padding</li>
+			<li><strong>striped</strong>: adds horizontal stripes to make wide tables easier to read</li>
+			<li><strong>unstriped</strong>: prevent larger tables from automatically becoming striped</li>
+			<li><strong>minimal</strong>: simplified appearance</li>
+			<li><strong>borderless</strong>: removes inside borders between cells</li>
+			<li><strong>unstyled</strong>: removes most of the CSS rules from a table to make it easier to style with custom CSS.</li>
+		</ul>
+		<h4>Alignment</h4>
+		<p>Text alignment is centered by default. Paragraphs, lists, and headings are left aligned. You can manually adjust the text alignment with the following classes:</p>
+		<ul>
+			<li>Horizontal: left, right, center, or centre</li>
+			<li>Vertical: top, bottom, middle</li>
+		</ul>
+		<p>The above classes can be applied to the table, thead, tbody, tr, th, or td tags. All decendants will inherit that alignment, but you can overide it at any level by applying a different class.</p>
+		<p>For rows, you can add an alignment class (typically vertical) to the tr tag.</p>
+		<p>For columns, adding a horizontal alignment class to any cell in the first row will change the alignment for the entire column. This will only work on simple tables (Eg. no colspan or rowspan attributes).</p>
+		<h4>Sizing</h4>
+		<p>Adjusting the size of a table can be useful from time to time. For example, a blank form intended to be filled in with content. Here's how you can do it:</p>
+		<h5>Table Width</h5>
+		<p>Changing the size of the table itself can be done by adding one of the following classes to the figure tag:</p>
+		<ul>
+			<li>small</li>
+			<li>smaller</li>
+			<li>smallest</li>
+			<li>large</li>
+			<li>larger</li>
+			<li>largest</li>
+		</ul>
+		<h5>Column Width</h5>
+		<p>Controlling the widths of columns can be done by adding a class to the first cell in that column indicating the width as a percentage that it should occupy. For example: class="width33" would create a column 33% wide.</p>
+		<h5>Row Height</h5>
+		<p>Controlling the height of rows can be done similar to the widths, except you must provide a pixel amount. For example class="height200" would create a row that is 200px tall. These work in increments of 25 and any number in between will be rounded up to the nearest 25px</p>
+	</div>
+</notes>
