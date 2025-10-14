@@ -1,15 +1,54 @@
 <heading>Flashcards</heading>
 <blurb>The flashcards interaction allows users to review a set of study cards, each with a question on the front and an answer on the back.</blurb>
 <preview>
-    <div class="accordion">
-        <h2>Flashcard Example</h2>
-        <p>To come from Arvin...</p>
-    </div>
+    <table class="flashcards">
+        <thead>
+            <tr>
+                <th>Front</th>
+                <th>Back</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>What is the capital of Canada?</td>
+                <td>Ottawa</td>
+            </tr>
+            <tr>
+                <td>What does HTML stand for?</td>
+                <td>HyperText Markup Language</td>
+            </tr>
+            <tr>
+                <td>What is the largest planet in our solar system?</td>
+                <td>Jupiter</td>
+            </tr>
+        </tbody>
+    </table>
 </preview>
 <word>
     <p>#flashcards</p>
     <h2>Flashcard Example</h2>
-    <p>To come from Arvin...</p>
+    <table class="flashcards">
+        <thead>
+            <tr>
+                <th>Front</th>
+                <th>Back</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>What is the capital of Canada?</td>
+                <td>Ottawa</td>
+            </tr>
+            <tr>
+                <td>What does HTML stand for?</td>
+                <td>HyperText Markup Language</td>
+            </tr>
+            <tr>
+                <td>What is the largest planet in our solar system?</td>
+                <td>Jupiter</td>
+            </tr>
+        </tbody>
+    </table>
     <p>/flashcards</p>
 </word>
 <notes>
@@ -17,6 +56,11 @@
     <p>The navigation buttons let users move through the cards, shuffle the deck, flip individual cards, or flip the entire deck at once.</p>
     <div class="accordion">
         <h3>Developer Notes</h3>
-        <p>Add any developer notes for interaction customization here.</p>
+        <p>The flashcards table supports the following CSS classes for customization:</p>
+        <ul>
+            <li><code>no-number</code> - Removes card numbering from the display</li>
+            <li><code>no-nav</code> - Removes navigation controls from the flashcards</li>
+        </ul>
+        <p>These classes can be applied to the table element to modify the default behavior and appearance of the flashcard interaction.</p>
     </div>
 </notes>
