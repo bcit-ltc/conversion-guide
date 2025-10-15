@@ -22,15 +22,3 @@ If you encounter an error, consider the following:
 
 * Ensure Node.js (and npm) are installed on your computer
 * Ensure you run the command from the project root (same folder as package.json)
-
-## Deployment
-
-This package was modified to run on Kubernetes. To build and test the image locally, run:
-
-```bash
-docker build .
-
-docker container run -p 8080:8080
-```
-
-Browse to `http://localhost:8080/` to view the container.
