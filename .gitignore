@@ -1,6 +1,70 @@
-.sass-cache/
-**/node_modules
-*.map
+# OS / Editor Junk
 .DS_Store
-styles.css
-package-lock.json
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+*.cpython-36.pyc
+migrations/
+
+# Java / ANTLR
+*.class
+*.interp
+*.tokens
+.antlr/
+
+# Build outputs
+dist/
+build/
+out/
+coverage/
+
+# Local scratch / caches
+tmp/
+.cache/
+.dockerignore-local
+temp/
+
+# Kubernetes
+charts/**/.tgz
+
+# Locally-retrieved app chart
+app-chart/
+
+# Secrets / Env
+.env
+.env.*
+!.env.example    # keep template/example file tracked
+**/secrets*
+
+# Logs
+*.log
+logs/
+dev.log
+celery.log
+
+# Miscellaneous
+tests/
+database/
+dump.rdb
+
+# App specific
+*.css
+*.map
+.sass-cache/
