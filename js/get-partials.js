@@ -51,7 +51,7 @@ function getParams($node) {
 }
 
 function getRoute(params) {
-	return "../partials/" + params.join("/") + ".html";
+	return "/partials/" + params.join("/") + ".html";
 }
 
 function getPartial($, route) {
