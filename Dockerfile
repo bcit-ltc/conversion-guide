@@ -1,7 +1,7 @@
 # Dockerfile
 
 ## Build
-FROM node:20.16.1-alpine3.20 AS builder
+FROM node:24.10.0-alpine3.22 AS builder
 
 WORKDIR /app
 
