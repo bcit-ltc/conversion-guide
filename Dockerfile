@@ -33,3 +33,4 @@ LABEL maintainer=courseproduction@bcit.ca
 WORKDIR /usr/share/nginx/html
 
 COPY --from=cleaner /usr/share/nginx/html/ ./
+COPY nginx.conf /etc/nginx/conf.d/default.conf
