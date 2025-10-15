@@ -65,5 +65,6 @@ function getPartial($, route) {
 }
 
 function safeID(string) {
+	if (!string) return "unknown";
 	return string.toLowerCase().replace(/\W+?/g, "-");
 }

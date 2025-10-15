@@ -109,7 +109,7 @@
 		}
 	}
 
-	$.get("../partials/menu.html", function (data) {
+	$.get("/partials/menu.html", function (data) {
 		var $nav = $("<nav class='menu'>");
 		var $div = $("<div class='scrolling'>");
 
@@ -274,7 +274,7 @@
 	});
 
 	// Feedback form
-	// $.get("../partials/feedback.html", function (data) {
+	// $.get("/partials/feedback.html", function (data) {
 	// 	var $div = $("<div>").addClass("feedback-overlay");
     //     var $feedbackButtons = $("<div>").addClass("feedback-btn-group");
     //     $feedbackButtons.append($("<div>").addClass("feedback-mini").html("<i class='fa fa-comments fa-sm'></i>"));
