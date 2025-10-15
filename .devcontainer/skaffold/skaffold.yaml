@@ -16,6 +16,7 @@ deploy:
         chartPath: app-chart
         namespace: app
         createNamespace: true
+        skipBuildDependencies: true
         setValueTemplates:
           image.registry: "{{.IMAGE_DOMAIN_app}}"
           image.repository: "{{.IMAGE_REPO_NO_DOMAIN_app}}"
