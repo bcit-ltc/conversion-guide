@@ -7,10 +7,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Conversion Guide | BCIT Course Production</title>
-	<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 	<link rel="stylesheet" href="https://sugar-suite.ltc.bcit.ca/css/bcit.css">
-	<link rel="stylesheet" href="/css/prism.css">
-	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="css/styles.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -20,7 +20,12 @@
 </head>
 
 <body>
-	<div class="no-js-msg">Important: JavaScript must be enabled to access the contents of this conversion guide</div>
+	<div class="no-js-msg">This site works best with JavaScript enabled for interactive features like accordions, reveals, and navigation enhancements.</div>
+	<nav class="menu">
+		<div class="scrolling">
+			@@include('menu.html')
+		</div>
+	</nav>
 	<div class="wrapper">
 		<section class="ug-splash">
 			<p>The Conversion Guide is a reference for preparing Word documents for conversion to HTML.</p>
@@ -28,7 +33,7 @@
 		<section id="overview" class="ug-content">
 			<h1>Overview</h1>
 			<p>This Conversion Guide outlines ways to prepare your content in Word so that it can be processed into HTML easily and effectively, and uploaded to a learning management system such as BCIT's Learning Hub.</p>
-			<figure class="img"> <img src="/assets/word-to-html5.png" alt="word, html5 logos"> </figure>
+			<figure class="img"> <img src="assets/word-to-html5.png" alt="word, html5 logos"> </figure>
 			<h2>Why follow this guide?</h2>
 			<ol>
 				<li>Simple markers ensure clear communication of your ideas</li>
@@ -43,7 +48,7 @@
 			</ul>
 			<p>This guide introduces a variety of <em>course production elements</em> - different ways to display course content. When crafting the content of your build file, you can include any of these elements.</p>
 			<p>Below is an example of a quiz element:</p>
-			<figure class="image small"> <img src="/assets/example-element.png" alt="example element" />
+			<figure class="image small"> <img src="assets/example-element.png" alt="example element" />
 				<figcaption>Example of an element</figcaption>
 			</figure>
 			<p>Elements have various components:</p>
@@ -65,32 +70,32 @@
 			<div class="grid">
 				<div class="example-links clearfix">
 					<figure class="img">
-						<a href="/assets/examples/example-business.docx"><img src="/assets/examples/thumb-example-business-word.jpg" alt="Business example word document"></a>
+						<a href="assets/examples/example-business.docx"><img src="assets/examples/thumb-example-business-word.jpg" alt="Business example word document"></a>
 						<figcaption>example-business.docx</figcaption>
 					</figure>
 				</div>
 
-				<div class=arrow><img src="/assets/examples/arrow.gif"></div>
+				<div class=arrow><img src="assets/examples/arrow.gif"></div>
 
 				<div class="example-links clearfix">
 					<figure class="img">
-						<a href="/assets/examples/example-business.html"><img src="/assets/examples/thumb-example-business.png" alt="Business example"></a>
+						<a href="assets/examples/example-business.html"><img src="assets/examples/thumb-example-business.png" alt="Business example"></a>
 						<figcaption>Business Example</figcaption>
 					</figure>
 				</div>
 
 				<div class="example-links clearfix">
 					<figure class="img">
-						<a href="/assets/examples/example-health.docx"><img src="/assets/examples/thumb-example-health-word.jpg" alt="Health example word document"></a>
+						<a href="assets/examples/example-health.docx"><img src="assets/examples/thumb-example-health-word.jpg" alt="Health example word document"></a>
 						<figcaption>example-health.docx</figcaption>
 					</figure>
 				</div>
 
-				<div class=arrow><img src="/assets/examples/arrow.gif"></div>
+				<div class=arrow><img src="assets/examples/arrow.gif"></div>
 
 				<div class="example-links clearfix">
 					<figure class="img">
-						<a href="/assets/examples/example-health.html"><img src="/assets/examples/thumb-example-health.png" alt="Health example"></a>
+						<a href="assets/examples/example-health.html"><img src="assets/examples/thumb-example-health.png" alt="Health example"></a>
 						<figcaption>Health Sciences Example</figcaption>
 					</figure>
 				</div>
@@ -124,27 +129,27 @@
 			<div class="accordion">
 				<h3>Navigating content in Word</h3>
 				<p>The <strong>Navigation Pane</strong> is a great way to view the structure of your content. Under the <strong>View</strong> menu, check the Navigation Pane box.</p>
-				<img src="/assets/ms-word-tutorial/navigation-pane.png" alt="navigation pane howto">
+				<img src="assets/ms-word-tutorial/navigation-pane.png" alt="navigation pane howto">
 				<p>The <strong>Navigation Pane</strong> give you a good overview of the structure of your content, and allows you to move quickly around your document by clicking on a heading.</p>
 				<div class="note">
-					<p>Ideally the navigation follows a "stair-step" content structure. <img src="/assets/ms-word-tutorial/navigation-pane2.png" alt="secondary navigation pane howto"></p>
+					<p>Ideally the navigation follows a "stair-step" content structure. <img src="assets/ms-word-tutorial/navigation-pane2.png" alt="secondary navigation pane howto"></p>
 				</div>
 				<p>By right-clicking on a heading, you can gain access to various tools for working on your build files.</p>
-				<img src="/assets/ms-word-tutorial/navigation-pane3.png" alt="navigation pane tools howto">
+				<img src="assets/ms-word-tutorial/navigation-pane3.png" alt="navigation pane tools howto">
 				<p>In the example above, selecting <b>Promote</b> would change <strong>Sub-Topic</strong> to Heading 2.</p>
 				<h3>Leaving special instructions</h3>
 				<p>Word comments are the best way to leave instructions for the course production team:</p>
 				<ol>
 					<li>Select the word or paragraph that you want to leave instructions about</li>
 					<li>Right-click and choose <strong>New Comment</strong></li>
-				</ol> <img src="/assets/ms-word-tutorial/comment.png" alt="word comment howto">
+				</ol> <img src="assets/ms-word-tutorial/comment.png" alt="word comment howto">
 				<p>Alternatively, you can press <kbd>Ctrl + Alt + M</kbd> on a Windows computer or <kbd>Command + Option + A</kbd> on a Mac.</p>
 				<div class="warning">
 					<p>Instructions that are embedded directly in the text will likely be missed!</p>
 				</div>
 				<h3>Copying content from Word, PDFs, and other sources</h3>
-				<p>If you're pasting content from other sources, try to clear or merge the formatting so that the text uses the <strong>Normal</strong> style. This ensures that hidden formatting in Word won't emerge in the HTML.</p> <img src="/assets/ms-word-tutorial/merge-formatting.png" alt="merge formatting howto">
-				<p>If you forget this step, you can always go back and clear the formatting later.</p> <img src="/assets/ms-word-tutorial/clear-formatting.png" alt="clear formatting howto">
+				<p>If you're pasting content from other sources, try to clear or merge the formatting so that the text uses the <strong>Normal</strong> style. This ensures that hidden formatting in Word won't emerge in the HTML.</p> <img src="assets/ms-word-tutorial/merge-formatting.png" alt="merge formatting howto">
+				<p>If you forget this step, you can always go back and clear the formatting later.</p> <img src="assets/ms-word-tutorial/clear-formatting.png" alt="clear formatting howto">
 				<h3>File names and linking to files</h3>
 				<p>When you include other files (like PowerPoints or PDFs) with your build request, it's helpful if their names do not include spaces. Spaces in a file name can cause problems when browsers try to locate the file.</p>
 				<div class="example">
@@ -165,11 +170,11 @@
 				<h3>Requesting files in the Table of Contents</h3>
 				<p>To request a link to another file (like PowerPoints or PDFs), insert a title along with the file name using Word Heading 1 styling in the exact spot where you would like the file to appear in the TOC:</p>
 				<figure class="img">
-					<img src="/assets/sample-document-word.jpeg">
+					<img src="assets/sample-document-word.jpeg">
 				</figure>
 				<p>The above syntax in Word will output to HTML as:</p>
 				<figure class="img">
-					<img src="/assets/sample-module-learning-hub.jpeg">
+					<img src="assets/sample-module-learning-hub.jpeg">
 				</figure>
 			</div>
 		</section>
@@ -189,7 +194,7 @@
 			<h2>Home Tab</h2>
 
 			<div class="word-tools">
-				<img src="/assets/ms-word-tutorial/home-formatting.png" alt="">
+				<img src="assets/ms-word-tutorial/home-formatting.png" alt="">
 				<table>
 					<thead>
 						<tr>
@@ -364,7 +369,7 @@
 			<h3>Quick Styles</h3>
 
 			<div class="word-tools">
-				<img src="/assets/ms-word-tutorial/home-quick-styles.png" alt="">
+				<img src="assets/ms-word-tutorial/home-quick-styles.png" alt="">
 				<table>
 					<thead>
 						<tr>
@@ -474,7 +479,7 @@
 			</div>
 			<h2>Insert Tab</h2>
 			<div class="word-tools">
-				<img src="/assets/ms-word-tutorial/insert-1.png" alt="">
+				<img src="assets/ms-word-tutorial/insert-1.png" alt="">
 				<table>
 					<thead>
 						<tr>
@@ -600,7 +605,7 @@
 				</table>
 			</div>
 			<div class="word-tools">
-				<img src="/assets/ms-word-tutorial/insert-2.png" alt="">
+				<img src="assets/ms-word-tutorial/insert-2.png" alt="">
 				<table>
 					<thead>
 						<tr>
@@ -705,7 +710,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<a href="/assets/templates/blank-working-document.docx">Simple Working Document</a>
+							<a href="assets/templates/blank-working-document.docx">Simple Working Document</a>
 						</td>
 						<td>
 							<p>Sometimes the best place to start is with a basic file.</p>
@@ -713,7 +718,7 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="/assets/templates/annotated-sample-overview-module.docx">Overview Module</a>
+							<a href="assets/templates/annotated-sample-overview-module.docx">Overview Module</a>
 						</td>
 						<td>
 							<p>One example of a <em>"Getting Started"</em> module you could use as an introduction to your course.</p>
@@ -721,7 +726,7 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="/assets/templates/annotated-sample-content-light-module.docx">Content Light Module</a>
+							<a href="assets/templates/annotated-sample-content-light-module.docx">Content Light Module</a>
 						</td>
 						<td>
 							<p>Useful for courses where content is primarily external (PDFs, links, etc).</p>
@@ -729,7 +734,7 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="/assets/templates/annotated-sample-content-heavy-module.docx">Content Heavy Module</a>
+							<a href="assets/templates/annotated-sample-content-heavy-module.docx">Content Heavy Module</a>
 						</td>
 						<td>
 							<p>Useful for courses where there is a lot of content provided directly within the course itself.</p>
@@ -737,7 +742,7 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="/assets/templates/sample-course-content-notes.docx">Course Element Notes</a>
+							<a href="assets/templates/sample-course-content-notes.docx">Course Element Notes</a>
 						</td>
 						<td>
 							<p>This set of notes used by the Occupational Health and Safety (OCHS) program was used to ensure all course modules contained the same elements.</p>
@@ -750,9 +755,8 @@
 
 
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-	<script src="/js/get-partials.js"></script>
-	<script src="/js/page-setup.js"></script>
-	<script src="/js/ms-word-tutorial.js"></script>
+	<script src="js/page-setup.js"></script>
+	<script src="js/ms-word-tutorial.js"></script>
 	<script src="https://sugar-suite.ltc.bcit.ca/js/lat.js"></script>
 </body>
 

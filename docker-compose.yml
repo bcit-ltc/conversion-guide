@@ -3,7 +3,7 @@ services:
     image: conversion-guide
     build:
       context: .
-      target: cleaner
+      target: release
     # command: npm run watch
     environment:
       - DEBUG=True

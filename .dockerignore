@@ -28,6 +28,7 @@ dist
 build
 out
 coverage
+processed-partials
 
 # Kubernetes / Helm artifacts
 charts/**/.tgz
