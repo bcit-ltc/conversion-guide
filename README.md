@@ -12,7 +12,9 @@ The Course Production Conversion Guide is an online reference for anybody that d
 
 ## Development
 
-**Requirements**: Node.js 18+ (or Docker)
+**Requirements**: Node.js 24+ (or Docker)
+
+> **Modernized**: This project has been modernized from Gulp to Vite for faster development and better performance.
 
 ### Local Development
 
@@ -29,7 +31,7 @@ This will start the Vite dev server at `http://localhost:3000` with hot module r
 npm run build
 ```
 
-This creates optimized production files in the `dist/` directory.
+This creates optimized production files in the `dist/` directory with gzip and Brotli compression.
 
 ### Preview Production Build
 
@@ -44,25 +46,14 @@ This serves the production build locally at `http://localhost:4173` for testing.
 ### Development with Docker
 
 ```bash
-# Start development server with hot reload
-docker-compose -f docker-compose.dev.yml up
-
-# Or with rebuild
 docker-compose -f docker-compose.dev.yml up --build
 ```
 
-This runs the Vite dev server in a container with:
-- Hot module replacement
-- Volume mounting for live code changes
-- Port 3000 accessible at `http://localhost:3000`
+This runs the Vite dev server in a container with hot module replacement at `http://localhost:3000`.
 
 ### Production with Docker
 
 ```bash
-# Start production server
-docker-compose up
-
-# Or with rebuild
 docker-compose up --build
 ```
 
@@ -75,54 +66,35 @@ This creates an optimized production build served by nginx at `http://localhost:
 │   ├── pages/          # HTML entry points
 │   ├── partials/        # HTML includes and components
 │   ├── scss/           # SCSS stylesheets
-│   ├── js/             # JavaScript modules
-│   └── css/            # Static CSS files
+│   └── js/             # JavaScript modules
 ├── public/
-│   └── assets/         # Static assets (images, fonts, etc.)
+│   └── assets/         # Static assets
 ├── dist/               # Production build output
-├── vite.config.js      # Vite configuration
-├── Dockerfile          # Multi-stage Docker build
-├── docker-compose.yml  # Production Docker Compose
-└── docker-compose.dev.yml # Development Docker Compose
+└── vite.config.js      # Vite configuration
 ```
 
 ## Features
 
 - **Modern Build System**: Vite for fast development and optimized production builds
 - **Multi-page Application**: Support for multiple HTML entry points
-- **Custom Plugins**: 
-  - HTML includes (`@@include()` syntax)
-  - Partial processing (XML-like tags to HTML)
-- **SCSS Support**: Native Sass preprocessing with Vite
+- **Custom Plugins**: HTML includes (`@@include()`) and partial processing
+- **SCSS Support**: Native Sass preprocessing with modern `@use` syntax
+- **Compression**: Automatic gzip and Brotli compression for production
 - **Docker Support**: Both development and production containers
 - **Hot Module Replacement**: Instant updates during development
 - **Clean URLs**: SEO-friendly routing without file extensions
 
 ## Troubleshooting
 
-### Common Issues
-
 **Port already in use:**
 ```bash
-# Kill processes using port 3000
 npx kill-port 3000
-
-# Or use a different port
-npm run dev -- --port 3001
 ```
 
 **Docker build fails:**
 - Ensure Docker is running
-- Check that all files are present in the project directory
 - Try rebuilding with `--no-cache`: `docker-compose up --build --no-cache`
 
-**Sass deprecation warnings:**
-- These are warnings from Sass about deprecated `@import` syntax
-- They don't affect functionality but can be addressed by migrating to `@use` syntax
-
-### Development Tips
-
-- Use `npm run dev` for local development with the fastest feedback
-- Use `docker-compose -f docker-compose.dev.yml up` for consistent environment
-- Use `npm run preview` to test production builds locally
-- The floating navigation bar appears when scrolling down on any page
+**Missing styles after Docker rebuild:**
+- Ensure HTML files reference `/css/page-setup.css` (not SCSS source)
+- Check that `src/js/page-setup.js` imports the main SCSS file
