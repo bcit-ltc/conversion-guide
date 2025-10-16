@@ -1,0 +1,52 @@
+@use "sass:color";
+
+//Base Colour
+$bcit-blue: #003C71;
+//Fraser
+$fraser: #00ACA0;
+$fraser-light: color.adjust($fraser, $lightness: 40%);
+$fraser-lighter: color.adjust($fraser, $lightness: 70%);
+$fraser-dark: color.adjust($fraser, $lightness: -40%);
+$fraser-darker: color.adjust($fraser, $lightness: -65%);
+//Seaglass
+$seaglass: #49C5B1;
+$seaglass-light: color.adjust($seaglass, $lightness: 40%);
+$seaglass-lighter: color.adjust($seaglass, $lightness: 70%);
+$seaglass-dark: color.adjust($seaglass, $lightness: -40%);
+$seaglass-darker: color.adjust($seaglass, $lightness: -65%);
+//Moss
+$moss: #B5BD00;
+$moss-light: color.adjust($moss, $lightness: 40%);
+$moss-lighter: color.adjust($moss, $lightness: 70%);
+$moss-dark: color.adjust($moss, $lightness: -40%);
+$moss-darker: color.adjust($moss, $lightness: -65%);
+//Pacific
+$pacific: #0072CE;
+$pacific-light: color.adjust($pacific, $lightness: 40%);
+$pacific-lighter: color.adjust($pacific, $lightness: 70%);
+$pacific-dark: color.adjust($pacific, $lightness: -40%);
+$pacific-darker: color.adjust($pacific, $lightness: -65%);
+//Sky
+$sky: #00A3E0;
+$sky-light: color.adjust($sky, $lightness: 40%);
+$sky-lighter: color.adjust($sky, $lightness: 70%);
+$sky-dark: color.adjust($sky, $lightness: -40%);
+$sky-darker: color.adjust($sky, $lightness: -65%);
+//Dusk
+$dusk: #7474C1;
+$dusk-light: color.adjust($dusk, $lightness: 40%);
+$dusk-lighter: color.adjust($dusk, $lightness: 70%);
+$dusk-dark: color.adjust($dusk, $lightness: -40%);
+$dusk-darker: color.adjust($dusk, $lightness: -65%);
+//Driftwood
+$driftwood: #AFA9A0;
+$driftwood-light: color.adjust($driftwood, $lightness: 40%);
+$driftwood-lighter: color.adjust($driftwood, $lightness: 70%);
+$driftwood-dark: color.adjust($driftwood, $lightness: -40%);
+$driftwood-darker: color.adjust($driftwood, $lightness: -65%);
+//Temlh
+$temlh: #9D2235;
+$temlh-light: color.adjust($temlh, $lightness: 40%);
+$temlh-lighter: color.adjust($temlh, $lightness: 70%);
+$temlh-dark: color.adjust($temlh, $lightness: -40%);
+$temlh-darker: color.adjust($temlh, $lightness: -65%);

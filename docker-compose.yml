@@ -3,12 +3,8 @@ services:
     image: conversion-guide
     build:
       context: .
-      target: release
-    # command: npm run watch
-    environment:
-      - DEBUG=True
-    working_dir: /app
-    # volumes:
-    #   - .:/app
+      target: production
     ports:
       - "8080:8080"
+    environment:
+      - NODE_ENV=production

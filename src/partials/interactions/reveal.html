@@ -1,0 +1,40 @@
+<heading>Reveals</heading>
+<blurb>A reveal button causes further content to appear below the button.</blurb>
+<preview>
+	<p>What does the CHN require in order to effectively engage in the strategies listed above?</p>
+	<div class="reveal" data-button="Answer">
+		<p>The CHN needs a good working knowledge of...</p>
+	</div>
+</preview>
+<word>
+	<p>What does the CHN require in order to effectively engage in the strategies listed above?</p>
+	<p>#reveal</p>
+	<p>Button: Answer</p>
+	<p>The CHN needs a good working knowledge of...</p>
+	<p>/reveal</p>
+</word>
+<notes>
+	<p>Reveals are useful for question/answer-type engagement where the question is more than one line of text.</p>
+	<div class="note">
+		<p>The default button text is <code>Reveal</code>; if you would like the button to say something else, please add <code>Button: <em>some text</em></code>, like in the Word example.</p>
+	</div>
+	<h4>Active Reveals</h4>
+	<p>An input text box can also be added to a reveal, requiring the student to type something into the text box before the reveal button becomes clickable. To add an input text box, add <code>min-text: <em>some number</em></code> below the <code>#reveal</code> marker in your Word document.</p>
+	<p>You can also add some placeholder/initial text in the input box, such as "Type your answer here". To do so, include <code>placeholder: <em>some initial text</em></code> under <code>min-text: <em>some number</em></code>.</p>
+	<div class="note">
+		<p>The <code>min-text:</code> specifies the minimum amount of characters the student needs to type in the input box before they can click on the reveal button. A typical one-line sentence has approximately 90 characters.</p>
+	</div>
+	<div class="accordion">
+		<h3>Developer Notes</h3>
+		<p>Button text is set by the <code>data-button</code> attribute value.</p>
+		<h4>Active Reveals</h4>
+		<p>Use the class <code>active-reveal</code>, instead of <code>reveal</code>.</p>
+		<p>The following are attributes that can be used for Active Reveals:</p>
+		<ul>
+			<li>data-button</li>
+			<li>data-min-text</li>
+			<li>data-placeholder</li>
+			<li>data-rows (changes the size of the input box)</li>
+		</ul>
+	</div>
+</notes>

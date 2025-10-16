@@ -1,35 +1,26 @@
-# Dockerfile
-
-## Build
+# Development stage
 FROM node:24.10.0-alpine3.22 AS builder
 
 WORKDIR /app
 
+# Copy package files and install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
+# Copy source code
 COPY . ./
 
+# Build stage (for production)
+FROM builder AS build
 RUN npm run build
 
-
-## Clean
-FROM nginx:alpine AS cleaner
-
-WORKDIR /usr/share/nginx/html
-
-RUN rm -rf ./*
-
-COPY --from=builder /app/dist/ ./
-COPY --from=builder /app/nginx.conf /etc/nginx/conf.d/default.conf
-
-
-## Release/production
-FROM nginxinc/nginx-unprivileged:1.29-alpine3.22-perl AS release
+# Production stage with nginx
+FROM nginxinc/nginx-unprivileged:1.29-alpine3.22-perl AS production
 
 LABEL maintainer=courseproduction@bcit.ca
 
-WORKDIR /usr/share/nginx/html
+# Copy built files and nginx config
+COPY --from=build /app/dist/ /usr/share/nginx/html/
+COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=cleaner /usr/share/nginx/html/ ./
-COPY --from=builder /app/nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 8080

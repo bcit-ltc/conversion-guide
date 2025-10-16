@@ -1,0 +1,28 @@
+@use "./mixins/_media-queries" as *;
+@use "./constants/_fonts" as *;
+@use "./constants/_colors" as *;
+@use "./_variables" as *;
+@use "./partials/_wrapper" as *;
+@use "./partials/menu/_menu" as *;
+@use "./partials/element/_element" as *;
+@use "./partials/_ms-word-tutorial" as *;
+@use "./partials/_home-page" as *;
+// @import "./partials/_feedback";
+
+	// JavaScript disabled message - only show when JS is disabled
+	.no-js-msg {
+		background-color: #fff3cd;
+		border: 1px solid #ffeaa7;
+		color: #856404;
+		padding: 12px 20px;
+		margin: 10px;
+		border-radius: 4px;
+		font-size: 14px;
+		text-align: center;
+		display: none; // Hidden by default
+	}
+
+	// Show the message only when JavaScript is disabled (no-js class is present)
+	.no-js .no-js-msg {
+		display: block;
+	}
