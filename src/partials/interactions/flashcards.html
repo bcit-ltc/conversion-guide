@@ -56,11 +56,60 @@
     <p>The navigation buttons let users move through the cards, shuffle the deck, flip individual cards, or flip the entire deck at once.</p>
     <div class="accordion">
         <h3>Developer Notes</h3>
-        <p>The flashcards table supports the following CSS classes for customization:</p>
+        <p>Here's a complete list of all the table-level styling and <code>&lt;tr&gt;</code> classes for flashcards:</p>
+        
+        <h4>Table-Level Data Attributes</h4>
+        
+        
+        <h5>Table Classes</h5>
         <ul>
-            <li><code>no-number</code> - Removes card numbering from the display</li>
-            <li><code>no-nav</code> - Removes navigation controls from the flashcards</li>
+            <li><code>class="flashcards"</code> - Required to activate flashcard functionality</li>
+            <li><code>class="flashcards no-number"</code> - Hides the card counter</li>
+            <li><code>class="flashcards no-nav"</code> - Hides navigation controls</li>
         </ul>
-        <p>These classes can be applied to the table element to modify the default behavior and appearance of the flashcard interaction.</p>
+        
+        <h5>Height Control</h5>
+        <ul>
+            <li><code>data-height="500"</code> - Sets fixed height for cards (default: 500px)</li>
+        </ul>
+
+        <h5>Content Alignment (affects all cards)</h5>
+        <ul>
+            <li><code>data-justify-content="flex-start"</code> - Positions all content to the left</li>
+            <li><code>data-justify-content="center"</code> - Positions all content center</li>
+            <li><code>data-justify-content="flex-end"</code> - Positions all content to the right</li>
+            <li><code>data-align-items="flex-start"</code> - Positions all content at the top</li>
+            <li><code>data-align-items="center"</code> - Positions all content center vertically</li>
+            <li><code>data-align-items="flex-end"</code> - Positions all content at the bottom</li>
+        </ul>
+        
+        <h4>Per-Card <code>&lt;tr&gt;</code> Classes (9-Direction Positioning)</h4>
+        
+        <h5>Top Row</h5>
+        <ul>
+            <li><code>class="top-left"</code> - Content positioned at top-left with left text alignment</li>
+            <li><code>class="top-center"</code> - Content positioned at top-center with center text alignment</li>
+            <li><code>class="top-right"</code> - Content positioned at top-right with right text alignment</li>
+        </ul>
+        
+        <h5>Middle Row</h5>
+        <ul>
+            <li><code>class="middle-left"</code> - Content positioned at middle-left with left text alignment</li>
+            <li><code>class="middle-center"</code> - Content positioned at middle-center with center text alignment</li>
+            <li><code>class="middle-right"</code> - Content positioned at middle-right with right text alignment</li>
+        </ul>
+        
+        <h5>Bottom Row</h5>
+        <ul>
+            <li><code>class="bottom-left"</code> - Content positioned at bottom-left with left text alignment</li>
+            <li><code>class="bottom-center"</code> - Content positioned at bottom-center with center text alignment</li>
+            <li><code>class="bottom-right"</code> - Content positioned at bottom-right with right text alignment</li>
+        </ul>
+        
+        
+        <h4>Key Points</h4>
+        <ul>
+            <li><strong>Per-card classes override table attributes</strong>: <code>&lt;tr&gt;</code> classes take precedence over table-level <code>data-*</code> attributes</li>
+        </ul>
     </div>
 </notes>
