@@ -2,6 +2,9 @@
 	var hamburger = "<svg data-name='Capa 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><defs><style>.bars{fill:#000;}</style></defs><title>Hamburger</title><path class='bars' d='M19.3,130.4H492.7a19.3,19.3,0,0,0,0-38.6H19.3a19.3,19.3,0,0,0,0,38.6Z'/><path class='bars' d='M19.3,275.3H492.7a19.3,19.3,0,0,0,0-38.6H19.3a19.3,19.3,0,0,0,0,38.6Z'/><path class='bars' d='M19.3,420.2H492.7a19.3,19.3,0,0,0,0-38.6H19.3a19.3,19.3,0,1,0,0,38.6Z'/></svg>";
 
 	// var siteTitleHead = "Course Production - ";
+	// Remove no-js class to indicate JavaScript is enabled
+	$('html').removeClass('no-js');
+	
 	var siteTitleContent = "Conversion Guide";
 	var $menuButton = $("<button>")
 		.addClass("menu-button")
@@ -24,7 +27,7 @@
 
 	$(".wrapper").prepend($branding);
 
-	// TODO: Consider moving some of these transforms into get-partials.js
+	// Content transforms for styling and interaction
 
 	// Adds MS Word flair
 	$(".word").each(function () {
@@ -109,19 +112,12 @@
 		}
 	}
 
-	$.get("../partials/menu.html", function (data) {
-		var $nav = $("<nav class='menu'>");
-		var $div = $("<div class='scrolling'>");
-
-		$div.append(data);
-		$nav.append($div);
-        $("body").prepend($nav);
-        
-        var location = window.location.href;
-        var path = location.substr(location.lastIndexOf('/') + 1);
-        $(".menu a[href='" + path +"']").addClass("current");
-		addMenuBehaviour();
-	});
+	// Navigation is now included at build time, no need to load via AJAX
+	// Set current page highlighting
+	var location = window.location.href;
+	var path = location.substr(location.lastIndexOf('/') + 1);
+	$(".menu a[href='" + path +"']").addClass("current");
+	addMenuBehaviour();
 
 	function addMenuBehaviour() {
 		var $menu = $(".menu");
@@ -274,7 +270,7 @@
 	});
 
 	// Feedback form
-	// $.get("../partials/feedback.html", function (data) {
+	// $.get("/partials/feedback.html", function (data) {
 	// 	var $div = $("<div>").addClass("feedback-overlay");
     //     var $feedbackButtons = $("<div>").addClass("feedback-btn-group");
     //     $feedbackButtons.append($("<div>").addClass("feedback-mini").html("<i class='fa fa-comments fa-sm'></i>"));
