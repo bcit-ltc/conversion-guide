@@ -4,27 +4,21 @@
   "author": "BCIT LTC, Course Production Team",
   "license": "MIT",
   "description": "guide for conversion",
-  "main": "gulpfile.mjs",
+  "type": "module",
+  "main": "vite.config.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "gulp build && gulp watch",
-    "quickly": "gulp watch",
-    "build": "gulp build"
-  },
-  "dependencies": {
-    "browser-sync": "^3.0.2",
-    "gulp": "^5.0.0",
-    "gulp-autoprefixer": "^9.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.77.8"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "gulp-file-include": "^2.3.0",
-    "through2": "^4.0.2"
+    "js-beautify": "^1.15.4",
+    "sass": "^1.93.2",
+    "vite": "^7.1.10",
+    "vite-plugin-compression": "^0.5.1"
   }
 }

@@ -1,0 +1,17 @@
+@use "./constants/_colors" as *;
+
+// Variables file for the conversion guide
+$body-background-color: #f1f1f1;
+$menu-background-color: $body-background-color;
+$menu-link-default-color: $pacific;
+$default-text-color: #838383;
+$page-heading-color: $bcit-blue;
+$splash-background-color: $bcit-blue;
+$element-heading-color: #42749e;
+$nav-bar-background-color: $bcit-blue;
+$nav-bar-menu-button-fill-color: white;
+$nav-bar-marker-quick-ref-link-color: white;
+$header-padding-top: 70px;
+// Z-index
+$z-menu: 5;
+$z-nav-bar: $z-menu - 1;

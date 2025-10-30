@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Interactions | Conversion Guide</title>
+	<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+	<link rel="stylesheet" href="https://sugar-suite.ltc.bcit.ca/css/bcit.css">
+	<link rel="stylesheet" href="/css/prism.css">
+	<link rel="stylesheet" href="/css/page-setup.css">
+	<style>
+		#swappers .preview {
+			  padding-top: 27px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="no-js-msg">This site works best with JavaScript enabled for interactive features like accordions, reveals, and navigation enhancements.</div>
+	<nav class="menu">
+		<div class="scrolling">
+			@@include('menu.html')
+		</div>
+	</nav>
+	<div class="wrapper">
+		<header>
+			<h1>Interactions</h1>
+			<p>Interaction elements are defined as having some form of user engagement.</p>
+		</header>
+		@@include('interactions/reveal.html')
+		@@include('interactions/accordion.html')
+		@@include('interactions/tabs.html')
+		@@include('interactions/swapper.html')
+		@@include('interactions/line-matching.html')
+		@@include('interactions/checklist.html')
+		@@include('interactions/custom-interactions.html')
+		@@include('interactions/flashcards.html')
+	</div>
+
+	<script src="/js/jquery-3.7.1.min.js"></script>
+	<script type="module" src="/src/js/prism.js"></script>
+	<script type="module" src="/src/js/page-setup.js"></script>
+	<script src="https://sugar-suite.ltc.bcit.ca/js/lat.js"></script>
+</body>
+
+</html>
