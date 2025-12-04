@@ -1,1 +1,13 @@
 * text eol=lf
+
+# Binary files should not have line endings normalized
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.psd binary
+*.docx binary
+*.mp4 binary
+*.svg binary
