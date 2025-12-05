@@ -37,6 +37,17 @@
 		}
 
 	</style>
+	<!-- Plausible Analytics -->
+	<script>
+		// Configure Plausible before script loads
+		window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) };
+		// Configure: allow localhost tracking for testing
+		window.plausible.o = { 
+			captureOnLocalhost: false,
+			autoCapturePageviews: true
+		};
+	</script>
+	<script defer src="https://common.ltc.bcit.ca/js/utils.js"></script>
 </head>
 
 <body>
