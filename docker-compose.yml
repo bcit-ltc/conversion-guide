@@ -1,10 +1,9 @@
-name: ${APP_NAME}
-
+name: ${APP_NAME:-conversion-guide}
 services:
   app:
-    image: ${APP_NAME}
     build:
-      target: cleaner
+      context: .
+      target: release
     environment:
       - DEBUG=True
     working_dir: /app

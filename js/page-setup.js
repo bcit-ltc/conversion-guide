@@ -216,7 +216,7 @@
 				windX = windowWidth;
 			}
 		});
-		$(".menu-button").on("click", function (e) {
+		$(document).on("click", ".menu-button", function (e) {
 			$menu.trigger("adjust-size");
 			$menu.trigger("toggle");
 			e.stopPropagation();
