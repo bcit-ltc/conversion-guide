@@ -269,6 +269,182 @@
 		}
 	});
 
+	// Plausible tracking for custom properties
+	var pageType = getPageType();
+
+	function getPageType() {
+		var path = window.location.pathname || "";
+		var trimmed = path.replace(/\/+$/, "");
+		var last = trimmed.split("/").filter(Boolean).pop() || "";
+		var name = last.replace(/\.html$/, "");
+		if (!name || name === "index") {
+			return "home";
+		}
+		return name;
+	}
+
+	function trackPlausible(eventName, props) {
+		if (typeof window.plausible !== "function") {
+			return;
+		}
+		window.plausible(eventName, { props: props || {} });
+	}
+
+	function getContentSectionFromHref(href) {
+		if (!href || href.indexOf("#") === -1) {
+			return null;
+		}
+		var hash = href.split("#").pop();
+		if (!hash) {
+			return null;
+		}
+		return decodeURIComponent(hash);
+	}
+
+	function getAssetInfo(href) {
+		if (!href) {
+			return null;
+		}
+		var url;
+		try {
+			url = new URL(href, window.location.href);
+		} catch (e) {
+			return null;
+		}
+		var path = url.pathname || "";
+		var filename = path.split("/").pop() || "";
+		var extMatch = filename.match(/\.([a-z0-9]+)$/i);
+		if (!extMatch) {
+			return null;
+		}
+		var extension = extMatch[1].toLowerCase();
+		var supported = {
+			docx: "docx",
+			pdf: "pdf",
+			jpg: "jpg",
+			jpeg: "jpg",
+			png: "png",
+			gif: "gif",
+			svg: "svg",
+			mp4: "mp4",
+			mp3: "mp3",
+			wav: "wav",
+			html: "html"
+		};
+		if (!supported[extension]) {
+			return null;
+		}
+		return {
+			type: supported[extension],
+			name: decodeURIComponent(filename)
+		};
+	}
+
+	function getExternalLinkValue(href) {
+		if (!href) {
+			return null;
+		}
+		if (href.indexOf("mailto:") === 0 || href.indexOf("tel:") === 0) {
+			return href;
+		}
+		var url;
+		try {
+			url = new URL(href, window.location.href);
+		} catch (e) {
+			return null;
+		}
+		if (url.protocol !== "http:" && url.protocol !== "https:") {
+			return null;
+		}
+		if (url.hostname && url.hostname !== window.location.hostname) {
+			return url.hostname;
+		}
+		return null;
+	}
+
+	function getInteractionType($target) {
+		if ($target.hasClass("accordion")) return "accordion";
+		if ($target.hasClass("tabs")) return "tabs";
+		if ($target.hasClass("reveal")) return "reveal";
+		if ($target.hasClass("swapper")) return "swapper";
+		if ($target.hasClass("flashcards")) return "flashcards";
+		if ($target.hasClass("line-matching")) return "line-matching";
+		if ($target.hasClass("checklist")) return "checklist";
+		if ($target.hasClass("interaction")) return "custom";
+		return null;
+	}
+
+	function getInteractionName($target) {
+		var $section = $target.closest("section[id]");
+		if ($section.length) {
+			return $section.attr("id");
+		}
+		var heading = $target.find("h2,h3,h4").first().text().trim();
+		if (heading) {
+			return heading;
+		}
+		return null;
+	}
+
+	$(document).on("click", ".menu a, .nav-bar a", function () {
+		var href = $(this).attr("href") || "";
+		var navLabel = $(this).text().trim() || href;
+		var section = getContentSectionFromHref(href);
+		var props = {
+			page_type: pageType,
+			nav_link: navLabel
+		};
+		if (section) {
+			props.content_section = section;
+		}
+		trackPlausible("nav_click", props);
+	});
+
+	$(document).on("click", "a[href]", function () {
+		var href = $(this).attr("href") || "";
+		var section = getContentSectionFromHref(href);
+		if (section) {
+			trackPlausible("content_section", {
+				page_type: pageType,
+				content_section: section
+			});
+		}
+
+		var assetInfo = getAssetInfo(href);
+		if (assetInfo) {
+			trackPlausible("asset_download", {
+				page_type: pageType,
+				asset_type: assetInfo.type,
+				asset_name: assetInfo.name
+			});
+		}
+
+		var external = getExternalLinkValue(href);
+		if (external) {
+			trackPlausible("external_click", {
+				page_type: pageType,
+				external_link: external
+			});
+		}
+	});
+
+	$(document).on("click", ".accordion, .tabs, .reveal, .swapper, .flashcards, .line-matching, .checklist, .interaction", function () {
+		var $target = $(this);
+		var interactionType = getInteractionType($target);
+		if (!interactionType) {
+			return;
+		}
+		var props = {
+			page_type: pageType,
+			interaction_type: interactionType
+		};
+		var interactionName = getInteractionName($target);
+		if (interactionName) {
+			props.interaction_name = interactionName;
+		}
+		trackPlausible("interaction_click", props);
+	});
+
 	// Feedback form
 	// $.get("/partials/feedback.html", function (data) {
 	// 	var $div = $("<div>").addClass("feedback-overlay");
