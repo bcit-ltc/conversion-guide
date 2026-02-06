@@ -88,17 +88,33 @@
 			var isCurrent = top < crossOver && bottom > crossOver;
 
 			if (isCurrent) {
-				var $shouldBeCurrent = $(".menu [href*='#" + $(this).attr("id") + "']").parent("li");
+				var sectionId = $(this).attr("id");
+				var $shouldBeCurrent = $(".menu [href*='#" + sectionId + "']").parent("li");
 				if ($shouldBeCurrent.hasClass(".current")) {
 					// do nothing
 					return false;
 				}
 				$(".menu .current").removeClass("current");
 				$shouldBeCurrent.addClass("current");
+				updateSectionHash(sectionId);
 				return false;
 			}
 		});
 	});
+
+	function updateSectionHash(sectionId) {
+		if (!sectionId) {
+			return;
+		}
+		if (window.location.hash === "#" + sectionId) {
+			return;
+		}
+		if (!window.history || typeof window.history.replaceState !== "function") {
+			return;
+		}
+		var newUrl = window.location.pathname + window.location.search + "#" + sectionId;
+		window.history.replaceState(null, "", newUrl);
+	}
 
 	// Menu
 	setMenuPosition();
@@ -362,30 +378,6 @@
 		return null;
 	}
 
-	function getInteractionType($target) {
-		if ($target.hasClass("accordion")) return "accordion";
-		if ($target.hasClass("tabs")) return "tabs";
-		if ($target.hasClass("reveal")) return "reveal";
-		if ($target.hasClass("swapper")) return "swapper";
-		if ($target.hasClass("flashcards")) return "flashcards";
-		if ($target.hasClass("line-matching")) return "line-matching";
-		if ($target.hasClass("checklist")) return "checklist";
-		if ($target.hasClass("interaction")) return "custom";
-		return null;
-	}
-
-	function getInteractionName($target) {
-		var $section = $target.closest("section[id]");
-		if ($section.length) {
-			return $section.attr("id");
-		}
-		var heading = $target.find("h2,h3,h4").first().text().trim();
-		if (heading) {
-			return heading;
-		}
-		return null;
-	}
-
 	$(document).on("click", ".menu a, .nav-bar a", function () {
 		var href = $(this).attr("href") || "";
 		var navLabel = $(this).text().trim() || href;
@@ -426,23 +418,6 @@
 				external_link: external
 			});
 		}
-	});
-
-	$(document).on("click", ".accordion, .tabs, .reveal, .swapper, .flashcards, .line-matching, .checklist, .interaction", function () {
-		var $target = $(this);
-		var interactionType = getInteractionType($target);
-		if (!interactionType) {
-			return;
-		}
-		var props = {
-			page_type: pageType,
-			interaction_type: interactionType
-		};
-		var interactionName = getInteractionName($target);
-		if (interactionName) {
-			props.interaction_name = interactionName;
-		}
-		trackPlausible("interaction_click", props);
 	});
 
 	// Feedback form
