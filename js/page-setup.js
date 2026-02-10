@@ -114,6 +114,13 @@
 		}
 		var newUrl = window.location.pathname + window.location.search + "#" + sectionId;
 		window.history.replaceState(null, "", newUrl);
+		if (sectionId !== lastTrackedSection) {
+			trackPlausible("content_section", {
+				page_type: pageType,
+				content_section: sectionId
+			});
+			lastTrackedSection = sectionId;
+		}
 	}
 
 	// Menu
@@ -287,6 +294,7 @@
 
 	// Plausible tracking for custom properties
 	var pageType = getPageType();
+	var lastTrackedSection = null;
 
 	function getPageType() {
 		var path = window.location.pathname || "";
