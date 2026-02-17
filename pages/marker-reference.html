@@ -38,12 +38,18 @@
 
 	</style>
 	<!-- Plausible Analytics -->
-	<script async src="https://plausible.io/js/pa-VMWKHTncMhQp1rNLffo8o.js"></script>
 	<script>
-		window.plausible = window.plausible || function() { (plausible.q = plausible.q || []).push(arguments) };
-		plausible.init = plausible.init || function(i) { plausible.o = i || {}; };
-		plausible.init();
+		// Configure Plausible before script loads
+		window.plausible =
+			window.plausible ||
+			function () {
+				(window.plausible.q = window.plausible.q || []).push(arguments);
+			};
+		window.plausible.o = { captureOnLocalhost: false, autoCapturePageviews: true };
+		window.ltcDomain = { eventDomain: "conversion-guide.ltc.bcit.ca" };
 	</script>
+	<script defer src="https://common.ltc.bcit.ca/js/utils.js"></script>
+</head>
 </head>
 
 <body>
